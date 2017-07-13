@@ -15,6 +15,7 @@ gem 'turbolinks'
 gem 'font-awesome-rails'
 gem 'pg'
 gem 'decent_exposure'
+
 group :development, :test do
   gem 'byebug'
   gem 'factory_girl_rails'
@@ -29,9 +30,9 @@ group :development do
   gem 'spring'
   gem 'better_errors'
   gem 'rails_layout'
-  gem 'rb-fchange', require: false
-  gem 'rb-fsevent', require: false
-  gem 'rb-inotify', require: false
+  gem 'rb-fchange', :require => false
+  gem 'rb-fsevent', :require => false
+  gem 'rb-inotify', :require => false
   gem 'spring-commands-rspec'
   gem 'html2haml'
   gem 'haml2slim'

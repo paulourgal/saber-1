@@ -19,7 +19,19 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
+pt-BR:
   activerecord:
     models:
-      address:
+      assessement:
+        type:
+          grade: Nota
+          retake: Recuperação
+      attendance:
+      course:
+      employee:
+      enrollment:
+      school:
+      school_class:
+      student:
+      teaching:
+      user:

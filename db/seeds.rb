@@ -25,6 +25,10 @@ Student.create(:name => 'Sandra',   :address => 'Rua Campos Sales, 454, Centro',
 
 (1..10).each {|s| Enrollment.create(:school_class_id => 1, :student_id => s, :enrolled_at => DateTime.now) }
 
+Enrollment.all.each do |e|
+  (Date.today.beginning_of_year..Date.today).each { |d| Attendance.create(:enrollment_id => e.id, :course_id => 1, :attendance_date => d, :status => [0, 1].sample ) unless d.saturday? || d.sunday? }
+end
+
 Employee.create(:name => '"Carlos Souza', :cpf => '123456789-00', :email => 'carlos@example.com', :phone => '(19) 98989898', :address => 'Rua Campos Sales, 454, Centro')
 User.create(:name => '"Carlos Souza', :role => :teacher, :cpf => '123456789-00', :email => 'carlos@example.com', :password => 'user123', :password_confirmation => 'user123')
 

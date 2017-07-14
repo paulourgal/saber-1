@@ -9,6 +9,7 @@
       - enrollments.each do |enrollment|
         tr
           td = enrollment.student.name
-          - (1..days_in_month(month)).each do
+          - (1..days_in_month(month)).each do |day|
             td
-              = check_box_tag 'test'
+              - date = DateTime.new(Date.today.year, month, day)
+              = check_box_tag 'test', 'true', false, :disabled => DateTime.now.day < day unless date.saturday? || date.sunday?

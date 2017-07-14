@@ -15,3 +15,21 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+
+$(document).on('turbolinks:load', function(){
+
+  // bootstrap tabs (select tab based on anchor)
+  var url = document.location.toString();
+  if (url.match('#')) {
+    $('.nav-tabs a[href="#' + url.split('#')[1] + '"]').tab('show');
+  }
+
+  // dismissable alerts
+  $(".alert").fadeTo(2000, 500).slideUp(500, function(){
+    $(".alert").alert('close');
+  });
+
+  // boostrap tooltips
+  $('[data-toggle="tooltip"]').tooltip();
+
+});

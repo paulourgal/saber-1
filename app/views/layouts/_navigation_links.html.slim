@@ -1,7 +1,7 @@
 li.dropdown
   a.dropdown-toggle[data-toggle="dropdown" href="#"]
     - if user_signed_in?
-      i.fa.fa-user.fa-fw
+      i.fa.fa-user-o.fa-fw
       | #{current_user.email}
       i.fa.fa-caret-down
     - else
@@ -9,7 +9,7 @@ li.dropdown
       i.fa.fa-caret-down
   ul.dropdown-menu.dropdown-user
     - if user_signed_in?
-      li= link_to "<i class='fa fa-check-square-o fa-1w'></i> Frequencia".html_safe, attendances_path
+      li= link_to "<i class='fa fa-address-book-o fa-1w'></i> #{t('turmas')}".html_safe, attendances_path
       li.divider
       li= link_to "<i class='fa fa-sign-out fa-fw'></i> Sign out".html_safe, destroy_user_session_path, :method => :delete
     - else

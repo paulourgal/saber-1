@@ -1,0 +1,14 @@
+.table-responsive
+  table.table.table-striped.table-hover.table-bordered
+    thead
+      tr
+        th = t('.student')
+        - (1..days_in_month(month)).each do |day|
+          th = day
+    tbody
+      - enrollments.each do |enrollment|
+        tr
+          td = enrollment.student.name
+          - (1..days_in_month(month)).each do
+            td
+              = check_box_tag 'test'

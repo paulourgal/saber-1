@@ -1,0 +1,29 @@
+.row
+  .col-xs-8.col-xs-offset-2
+    .page-header
+      h2.text-center #{t('.title')}
+.row
+  .col-xs-8.col-xs-offset-2
+    .table-responsive
+      table.table.table-striped.table-hover
+        thead
+          tr
+            th = t('.name')
+            th = t('.kind')
+            th
+        tbody
+          - teachings.each do |teaching|
+            tr
+              td = teaching.school_class.name
+              td = teaching.school_class.kind
+              td = teaching.course.name
+              td
+                = link_to attendances_index_path(teaching.school_class), :method => :get, :class => 'btn btn-success' do
+                  i.fa.fa-check-square-o.fa-fw
+                  '
+                  = t('.attendance')
+              /td
+                = link_to assessement_index_path(teaching.school_class), :method => :get, :class => 'btn btn-info' do
+                  i.glyphicon.glyphicon-eye-open
+                  '
+                  = t('.assessement')

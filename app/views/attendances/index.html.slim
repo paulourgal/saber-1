@@ -1,0 +1,25 @@
+.row
+  .col-xs-8.col-xs-offset-2
+    .page-header
+      h2.text-center #{t('.title')}
+.row
+  .col-xs-10.col-xs-offset-1[style="padding-left:0;"]
+    .row
+      .col-xs-1
+        =
+    .row
+      .col-xs-11.col-xs-offset-1
+        ul.nav.nav-tabs
+          - (1..Date.today.month).each do |month|
+            li[class=('active' if month == Date.today.month)]
+              a[href="#month_#{month}" data-toggle="tab" aria-expanded="true" ] = t('.months.'+month.to_s)
+          - (Date.today.month+1..12).each do |month|
+            li.disabled
+              a = t('.months.'+month.to_s)
+
+        .tab-content
+          - (1..Date.today.month).each do |month|
+            .tab-pane.fade[id="month_#{month}" class=('active in' if month == Date.today.month)]
+              br
+              == render('students', :month => month)
+        hr

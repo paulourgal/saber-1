@@ -1,28 +1,14 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+*
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* For testing purposes run rake db:seed to populate the database with test data, which includes:
+- One Course;
+- One School;
+- One User/Employee (login/passwd carlos@example.com/user123);
+- One SchoolClass;
+- One Teaching;
+- Ten Students;
+- Ten Enrollments (one for each Student);
+- Random Attendance for all students across all weekdays from 1st of Jan to today's date;
+- Random Assessement for all students.

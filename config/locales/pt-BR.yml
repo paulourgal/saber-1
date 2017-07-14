@@ -20,6 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 pt-BR:
+  common:
+    options: Opções
   attendances:
     index:
       title: Frequência
@@ -43,6 +45,9 @@ pt-BR:
       title: Turmas
       name: Nome
       kind: Tipo
+      course: Disciplina
+      attendance: Frequência
+      assessement: Avaliação
   activerecord:
     models:
       assessement:
@@ -55,6 +60,9 @@ pt-BR:
       enrollment:
       school:
       school_class:
+        kind:
+          first_years: Anos Iniciais
+          last_years: Anos Finais
       student:
       teaching:
       user:

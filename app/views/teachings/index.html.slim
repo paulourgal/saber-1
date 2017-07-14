@@ -10,20 +10,21 @@
           tr
             th = t('.name')
             th = t('.kind')
-            th
+            th = t('.course')
+            th[colspan="2" style="text-align:center;" ] = t('common.options')
         tbody
           - teachings.each do |teaching|
             tr
               td = teaching.school_class.name
-              td = teaching.school_class.kind
+              td = t('activerecord.models.school_class.kind.'+teaching.school_class.kind)
               td = teaching.course.name
-              td
-                = link_to attendances_index_path(teaching.school_class), :method => :get, :class => 'btn btn-success' do
+              td[ style="text-align:center;" ]
+                = link_to attendances_index_path(teaching), :method => :get, :class => 'btn btn-success' do
                   i.fa.fa-check-square-o.fa-fw
                   '
                   = t('.attendance')
-              /td
-                = link_to assessement_index_path(teaching.school_class), :method => :get, :class => 'btn btn-info' do
-                  i.glyphicon.glyphicon-eye-open
+              td[ style="text-align:center;" ]
+                = link_to attendances_index_path(teaching), :method => :get, :class => 'btn btn-success' do
+                  i.fa.fa-signal.fa-fw
                   '
                   = t('.assessement')

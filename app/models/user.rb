@@ -5,4 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   enum :role => [:teacher, :manager]
+
+  has_one :employee, :foreign_key => :cpf, :primary_key => :cpf
 end
